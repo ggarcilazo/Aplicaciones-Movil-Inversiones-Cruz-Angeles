@@ -1,0 +1,158 @@
+/* Fondo general */
+.inicio-content {
+  --background: #0a0a0a;
+  color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Encabezado amarillo */
+.encabezado-fijo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+ion-toolbar.encabezado-color {
+  --background: #f1b100 !important;
+  background-color: #f1b100 !important;
+  height: 56px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor principal */
+.inicio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 16px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Imagen de bienvenida */
+.inicio-banner {
+  width: 110px;
+  height: 110px;
+  border-radius: 18px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+/* Título principal */
+.inicio-titulo {
+  font-size: 24px;
+  color: #f1b100;
+  font-weight: 700;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Subtítulo */
+.inicio-subtitulo {
+  font-size: 14px;
+  color: #cccccc;
+  margin-bottom: 20px;
+}
+
+/* Botones */
+.inicio-botones {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+ion-button {
+  --border-radius: 18px;
+  --box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  text-transform: none;
+  font-weight: 500;
+}
+
+/* Título de sección */
+.inicio-seccion {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f1b100;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+/* Grid de productos */
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+/* Tarjetas de productos */
+ion-card {
+  background: #1f1f1f;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+ion-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
+}
+
+ion-card:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(255, 255, 255, 0.08);
+}
+
+ion-card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f1b100;
+}
+
+ion-card-subtitle {
+  font-size: 13px;
+  color: #dddddd;
+}
+
+/* Animaciones de entrada */
+.animate-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fade-delay {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out 0.3s forwards;
+}
+
+.animate-img {
+  animation: fadeInScale 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

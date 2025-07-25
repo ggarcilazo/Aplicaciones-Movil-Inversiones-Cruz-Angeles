@@ -1,0 +1,54 @@
+<ion-header class="encabezado-fijo">
+  <ion-toolbar class="encabezado-color"></ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="inicio-content">
+  <div class="inicio-container">
+
+    <!-- Imagen -->
+    <ion-img src="assets/icon/logo1.png" class="inicio-banner animate-img"></ion-img>
+
+    <!-- Título -->
+    <h1 class="inicio-titulo animate-fade">Bienvenido</h1>
+    <p class="inicio-subtitulo animate-fade">Calidad y confianza en productos de melamina</p>
+
+    <!-- Botones -->
+    <div class="inicio-botones animate-fade">
+      <ion-button size="small" shape="round" color="warning" [routerLink]="['/tabs/productos']">
+        Ver Productos
+      </ion-button>
+      <ion-button size="small" shape="round" fill="outline" color="light" [routerLink]="['/tabs/carrito']">
+        Ver Carrito
+      </ion-button>
+    </div>
+
+    <!-- Sección productos -->
+    <h2 class="inicio-seccion animate-fade">Productos destacados</h2>
+    <div class="productos-grid animate-fade-delay">
+      <ion-card [routerLink]="['/tabs/productos']">
+        <ion-img src="assets/icon/roble.jpg"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Melamina Roble</ion-card-title>
+          <ion-card-subtitle>S/ 40.00 m²</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card [routerLink]="['/tabs/productos']">
+        <ion-img src="assets/icon/nogal.jpg"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Melamina Nogal</ion-card-title>
+          <ion-card-subtitle>S/ 45.00 m²</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+
+      <ion-card [routerLink]="['/tabs/productos']">
+        <ion-img src="assets/icon/blanco.jpg"></ion-img>
+        <ion-card-header>
+          <ion-card-title>Melamina Blanco</ion-card-title>
+          <ion-card-subtitle>S/ 38.00 m²</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </div>
+
+  </div>
+</ion-content>

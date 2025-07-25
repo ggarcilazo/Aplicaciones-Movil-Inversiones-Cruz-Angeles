@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar style="--background: #f1b100;">
+    <ion-title style="text-align: center; font-weight: bold; color: #0a0a0a;">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo-negro" scroll-y="true">
+  <!-- Carrito vacío -->
+  <ion-card *ngIf="carritoData.length === 0" class="tarjeta">
+    <ion-card-header>
+      <ion-card-title style="color: #f1b100;">Tu carrito está vacío</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <!-- Lista de productos -->
+  <ion-card *ngFor="let item of carritoData" class="tarjeta">
+    <ion-item lines="none" class="item-negro">
+      <ion-thumbnail slot="start">
+        <img [src]="item.imagen" class="imagen-producto" />
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2 style="color: #ffffff;">{{ item.nombre }}</h2>
+        <p>Precio: <strong style="color: #f1b100;">S/ {{ item.precio }}</strong></p>
+        <p>Cantidad: {{ item.cantidad || 1 }}</p>
+        <p>Subtotal:
+          <strong style="color: #f1b100;">S/ {{ (item.precio * (item.cantidad || 1)).toFixed(2) }}</strong>
+        </p>
+      </ion-label>
+
+      <!-- Botón con imagen personalizada -->
+      <ion-button fill="clear" (click)="eliminarDelCarrito(item.id)">
+        <img src="assets/icon/basura.png" alt="Eliminar" style="width: 28px; height: 28px;" />
+      </ion-button>
+    </ion-item>
+  </ion-card>
+
+  <!-- Total -->
+  <ion-card *ngIf="carritoData.length > 0" class="tarjeta-total">
+    <ion-card-header>
+      <ion-card-title style="color: #f1b100;">Total a pagar</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <h2 class="monto-total">S/ {{ calcularTotal().toFixed(2) }}</h2>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón de pedido -->
+  <ion-button
+    expand="block"
+    class="boton-pedido"
+    (click)="realizarPedido()"
+    *ngIf="carritoData.length > 0"
+  >
+    ✅ Realizar Pedido
+  </ion-button>
+</ion-content>

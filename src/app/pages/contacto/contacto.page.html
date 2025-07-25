@@ -1,0 +1,77 @@
+
+<ion-header class="encabezado-fijo">
+  <ion-toolbar class="encabezado-color">
+    <ion-title class="titulo-encabezado"></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding fondo-negro">
+
+  <!-- 🗺️ UBICACIÓN -->
+  <ion-card class="tarjeta">
+    <ion-card-header>
+      <ion-card-title class="titulo-seccion">📍 Dirección</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Av. Universitaria 9653, Comas 15316<br />
+      <a href="https://maps.app.goo.gl/r2u1Gu2dXoYDwS7v5" target="_blank" class="link-amarillo">
+        Ver en Google Maps
+      </a>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- 📱 WHATSAPP -->
+  <ion-card class="tarjeta">
+    <ion-card-header>
+      <ion-card-title class="titulo-seccion">📞 WhatsApp</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <a href="https://wa.me/51973843615" target="_blank" class="link-amarillo">
+        +51 973 843 615
+      </a>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- 📧 CORREO -->
+  <ion-card class="tarjeta">
+    <ion-card-header>
+      <ion-card-title class="titulo-seccion">✉️ Correo electrónico</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <a href="mailto:cabah5720&#64;gmail.com" class="link-amarillo">
+        cabah5720&#64;gmail.com
+      </a>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- 📬 FORMULARIO DE CONTACTO -->
+  <ion-card class="tarjeta">
+    <ion-card-header>
+      <ion-card-title class="titulo-seccion">✍️ Envíanos un mensaje</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item class="item-negro">
+        <ion-label position="floating">Nombre</ion-label>
+        <ion-input [(ngModel)]="nombre" required></ion-input>
+      </ion-item>
+      <ion-item class="item-negro">
+        <ion-label position="floating">Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="correo" required></ion-input>
+      </ion-item>
+      <ion-item class="item-negro">
+        <ion-label position="floating">Mensaje</ion-label>
+        <ion-textarea [(ngModel)]="mensaje" required></ion-textarea>
+      </ion-item>
+
+      <ion-button expand="block" color="warning" shape="round" (click)="enviarMensaje()">
+        🚀 Enviar mensaje
+      </ion-button>
+
+      <ion-text color="success" *ngIf="mensajeEnviado">
+        <p class="ion-padding-top">✅ Tu mensaje fue enviado con éxito.</p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

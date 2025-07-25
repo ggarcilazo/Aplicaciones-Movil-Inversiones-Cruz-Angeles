@@ -1,0 +1,34 @@
+.contenido-pedidos {
+  background-color: #0a0a0a;
+  padding: 16px;
+}
+
+.pedido-card {
+  background-color: #1f1f1f;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.titulo-pedido {
+  font-size: 18px;
+  color: #f1b100;
+}
+
+.estado-pedido {
+  font-size: 14px;
+  color: white;
+}
+
+.detalle-item {
+  color: #fff;
+  margin: 6px 0;
+}
+
+.total-pedido {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #f1b100;
+  text-align: right;
+}

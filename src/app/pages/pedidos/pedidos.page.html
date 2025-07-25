@@ -1,0 +1,30 @@
+<ion-header class="encabezado-fijo">
+  <ion-toolbar class="encabezado-color">
+    <ion-title class="titulo-encabezado">Mis Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="contenido-pedidos">
+  <ion-card *ngFor="let pedido of pedidos$ | async" class="pedido-card">
+    <ion-card-header>
+      <ion-card-title class="titulo-pedido">Pedido - {{ pedido.fecha }}</ion-card-title>
+      <ion-card-subtitle class="estado-pedido">Estado: {{ pedido.estado }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <div *ngFor="let item of pedido.items" class="detalle-item">
+        <strong>{{ item.nombre }}</strong> x {{ item.cantidad }}  
+        <span style="float:right">S/ {{ item.precio * item.cantidad }}</span>
+      </div>
+      <div class="total-pedido">Total: S/ {{ pedido.total }}</div>
+    </ion-card-content>
+
+    <ion-button *ngIf="pedido.estado === 'pendiente'" color="danger" expand="block" shape="round" (click)="cancelarPedido(pedido.id)">
+      Cancelar Pedido
+    </ion-button>
+
+    <ion-button *ngIf="pedido.estado === 'pendiente'" color="success" expand="block" shape="round" (click)="marcarComoEntregado(pedido.id)">
+      Marcar como Entregado
+    </ion-button>
+  </ion-card>
+</ion-content>

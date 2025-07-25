@@ -1,0 +1,53 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="encabezado-color">
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo-negro ion-padding">
+  <div class="perfil-contenedor">
+
+    <!-- Información del usuario -->
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [value]="email" readonly></ion-input>
+    </ion-item>
+
+    <!-- Botones al costado -->
+    <div class="botones-acciones">
+      <ion-button (click)="actualizarPerfil()">Actualizar perfil</ion-button>
+      <ion-button color="medium" (click)="cerrarSesion()">Cerrar sesión</ion-button>
+    </div>
+
+    <h2>Historial de compras</h2>
+
+    <!-- Historial de pedidos -->
+    <ion-card *ngFor="let pedido of historial" class="tarjeta">
+      <ion-card-header>
+        <ion-card-title>Pedido - {{ pedido.fecha?.toDate?.() | date:'short' }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Total:</strong> S/ {{ pedido.total }}</p>
+        <p><strong>Pago:</strong> {{ pedido.metodoPago }}</p>
+
+        <ion-list>
+          <ion-item *ngFor="let prod of pedido.productos" class="item-negro">
+            <ion-label>
+              {{ prod.nombre }} x{{ prod.cantidad }} — S/ {{ prod.subtotal.toFixed(2) }}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <ion-button color="danger" fill="outline" size="small" (click)="eliminarPedido(pedido.id)">
+          🗑 Eliminar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

@@ -1,0 +1,151 @@
+.productos-content {
+  --background: #0a0a0a;
+  color: #ffffff;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+ion-toolbar.encabezado-color {
+  --background: #f1b100 !important;
+  background-color: #f1b100 !important;
+  height: 56px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.titulo-encabezado {
+  font-weight: bold;
+  text-align: center;
+  font-size: 18px;
+}
+
+.productos-container {
+  padding: 16px;
+  text-align: center;
+}
+
+.productos-titulo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f1b100;
+  margin-bottom: 24px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.filtros-barra {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: transparent;
+  padding: 0 8px;
+
+  ion-input,
+  ion-select {
+    --background: #1f1f1f;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  ion-input::placeholder {
+    color: #ffffff88;
+  }
+
+  ion-select::part(icon) {
+    color: #f1b100;
+  }
+}
+
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.producto-card {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: zoomIn 0.5s ease forwards;
+}
+
+.producto-card.animated {
+  animation: fadeInUp 0.4s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.producto-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+}
+
+.producto-img {
+  height: 140px;
+  object-fit: cover;
+  border-bottom: 1px solid #ffffff10;
+}
+
+.producto-nombre {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.producto-precio {
+  font-size: 15px;
+  color: #f1b100;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+ion-button {
+  margin: 0 12px 12px 12px;
+  font-size: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(255, 193, 7, 0.4);
+  border-radius: 9999px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+ion-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.6);
+}
+.animated {
+  animation: fadeInUp 0.4s ease-in-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

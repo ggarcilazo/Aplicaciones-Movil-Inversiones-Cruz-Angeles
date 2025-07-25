@@ -1,0 +1,147 @@
+// 🎯 ENCABEZADO FIJO
+.encabezado-fijo {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+ion-toolbar.encabezado-color {
+  --background: #f1b100 !important;
+  background-color: #f1b100 !important;
+  height: 56px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+// 🌌 FONDO OSCURO
+.fondo-negro {
+  --background: #0a0a0a;
+  background-color: #0a0a0a;
+  color: #ffffff;
+  padding-bottom: 24px;
+}
+
+// 💳 TARJETAS
+.tarjeta {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  padding: 12px 0;
+  box-shadow: 0 4px 12px rgba(241, 177, 0, 0.25);
+  animation: fadeUp 0.6s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  ion-card-header {
+    padding-bottom: 4px;
+  }
+}
+
+// 🟡 TÍTULOS
+.titulo-encabezado {
+  font-weight: bold;
+  color: #0a0a0a;
+}
+
+.titulo-seccion {
+  color: #f1b100;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+// ✅ LISTA DE VALORES
+ion-card-content ul {
+  padding-left: 16px;
+  list-style: none;
+
+  li::before {
+    content: '';
+    margin-right: 6px;
+    color: #f1b100;
+  }
+
+  li {
+    margin: 4px 0;
+    font-size: 0.95rem;
+    transition: all 0.3s ease-in-out;
+  }
+
+  li:hover {
+    transform: translateX(4px);
+    color: #f1b100;
+  }
+}
+
+// 🖼️ LOGO DE LA EMPRESA
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+
+  ion-img,
+  img {
+    max-width: 100px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(241, 177, 0, 0.4);
+    animation: zoomIn 1.2s ease;
+  }
+}
+
+// 🎞️ ANIMACIONES
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// 📱 RESPONSIVE
+@media screen and (max-width: 480px) {
+  .titulo-encabezado {
+    font-size: 1.1rem;
+  }
+
+  .titulo-seccion {
+    font-size: 1rem;
+  }
+
+  ion-card-content {
+    font-size: 0.9rem;
+  }
+
+  .logo-container ion-img,
+  .logo-container img {
+    max-width: 80px;
+  }
+}

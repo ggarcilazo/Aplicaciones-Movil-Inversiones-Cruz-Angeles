@@ -1,0 +1,140 @@
+.fondo-negro {
+  background-color: #0a0a0a;
+  padding: 5rem 1rem 5rem; // ✅ más espacio arriba y abajo
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.tarjeta,
+.tarjeta-total {
+  background-color: #1e1e1e;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.tarjeta-total {
+  background-color: #2a2a2a;
+  box-shadow: 0 0 10px rgba(241, 177, 0, 0.4);
+}
+
+.item-negro {
+  --background: #1a1a1a;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+ion-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  color: #ffffff;
+  flex: 1;
+  margin: 0;
+}
+
+ion-label h2,
+ion-label p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.imagen-producto {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.monto-total {
+  color: #f1b100;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.boton-pedido {
+  --background: #f1b100;
+  --color: #0a0a0a;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 2rem auto 1rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  display: block;
+}
+
+ion-thumbnail {
+  min-width: 50px;
+  min-height: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .imagen-producto {
+    width: 45px;
+    height: 45px;
+  }
+
+  .tarjeta,
+  .tarjeta-total,
+  .boton-pedido {
+    max-width: 90%;
+  }
+
+  ion-label h2 {
+    font-size: 1rem;
+  }
+
+  ion-label p {
+    font-size: 0.9rem;
+  }
+
+  .monto-total {
+    font-size: 1.2rem;
+  }
+
+  .boton-pedido {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .imagen-producto {
+    width: 40px;
+    height: 40px;
+  }
+
+  .tarjeta,
+  .tarjeta-total,
+  .boton-pedido {
+    max-width: 95%;
+  }
+
+  ion-label h2 {
+    font-size: 0.95rem;
+  }
+
+  ion-label p {
+    font-size: 0.85rem;
+  }
+
+  .monto-total {
+    font-size: 1.1rem;
+  }
+
+  .boton-pedido {
+    font-size: 0.95rem;
+  }
+}
